@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CineStream – Watch Movies & TV Shows Online | Stream in HD & 4K</title>
+    <title>OttFlix – Watch Movies & TV Shows Online | Stream in HD & 4K</title>
     <meta name="description" content="Stream thousands of movies and TV shows in HD and 4K. Hollywood, Bollywood, Korean cinema and more.">
 
     <!-- Google Fonts -->
@@ -2206,7 +2206,7 @@
 <nav class="navbar" id="navbar">
     <div class="nav-left">
         <div class="logo" onclick="goHome()">
-            <i class="fa-solid fa-clapperboard"></i>OTT<span>Flix</span>
+            <i class="fa-solid fa-clapperboard"></i>Ott<span>Flix</span>
         </div>
         <ul class="nav-menu" id="navMenu">
             <li><a href="#" class="active" onclick="navigate('home',this)" data-page="home"><i class="fa-solid fa-house"></i>Home</a></li>
@@ -2349,7 +2349,7 @@
 <footer class="footer" id="siteFooter">
     <div class="footer-grid">
         <div class="footer-brand">
-            <div class="logo"><i class="fa-solid fa-clapperboard"></i>OTT<span>Flix</span></div>
+            <div class="logo"><i class="fa-solid fa-clapperboard"></i>Ott<span>Flix</span></div>
             <p>Stream thousands of movies and TV shows in stunning HD and 4K quality. Available on all your devices, anytime, anywhere.</p>
             <div class="social-row">
                 <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
@@ -2385,7 +2385,7 @@
         </div>
     </div>
     <div class="footer-bottom">
-        <p>© 2024 CineStream. All rights reserved.</p>
+        <p>© 2024 OttFlix. All rights reserved.</p>
         <div class="footer-bottom-links">
             <a href="#">Privacy</a><a href="#">Terms</a><a href="#">Sitemap</a>
             <a href="#"><i class="fa-solid fa-globe"></i> English</a>
@@ -2474,7 +2474,7 @@
     <div class="modal-box">
         <button class="modal-close" onclick="closeModal('addProfileModal')"><i class="fa-solid fa-xmark"></i></button>
         <h2>Add Profile</h2>
-        <p class="subtitle">Create a profile for another person watching CineStream.</p>
+        <p class="subtitle">Create a profile for another person watching OttFlix.</p>
         <form onsubmit="handleAddProfile(event)">
             <div class="form-field"><label>Profile Name</label><div class="input-wrap"><i class="fa-regular fa-user field-icon"></i><input type="text" id="newProfileName" placeholder="e.g. Kids, Sarah" required></div></div>
             <div class="form-field"><label>Profile Type</label><select id="profileType"><option>Adult</option><option>Kids (12 & under)</option><option>Teen</option></select></div>
@@ -2644,8 +2644,8 @@ const heroData = [
 // ==============================================
 // STATE
 // ==============================================
-let user = JSON.parse(localStorage.getItem('cs_user')||'null');
-let watchlist = JSON.parse(localStorage.getItem('cs_list')||'[]');
+let user = JSON.parse(localStorage.getItem('of_user')||'null');
+let watchlist = JSON.parse(localStorage.getItem('of_list')||'[]');
 let slideIdx = 0;
 let playing = false;
 
@@ -2752,7 +2752,7 @@ function renderHome() {
         `<div class="featured-banner" onclick="openDetail('Inception')">
             <img src="${TMDB_BG}/8ZTVqvKDQ8emSGUEMjsS4yHAwrp.jpg" alt="Inception" loading="lazy">
             <div class="featured-gradient"><div class="featured-content">
-                <span class="featured-label"><i class="fa-solid fa-crown"></i> CineStream Original</span>
+                <span class="featured-label"><i class="fa-solid fa-crown"></i> OttFlix Original</span>
                 <h2>Inception</h2>
                 <p>A mind-bending journey through layers of consciousness. Dom Cobb leads a team of dream extractors on an impossible mission — to plant an idea into a target's subconscious.</p>
                 <div class="featured-actions">
@@ -2931,7 +2931,7 @@ function socialAuth(provider) {
 
 function loginUI(name, email, showProfile) {
     user = {name, email};
-    localStorage.setItem('cs_user', JSON.stringify(user));
+    localStorage.setItem('of_user', JSON.stringify(user));
     document.getElementById('authBtns').style.display='none';
     document.getElementById('userArea').style.display='flex';
     document.getElementById('ddName').textContent=name;
@@ -2944,7 +2944,7 @@ function loginUI(name, email, showProfile) {
 
 function logOut() {
     user=null;
-    localStorage.removeItem('cs_user');
+    localStorage.removeItem('of_user');
     document.getElementById('authBtns').style.display='flex';
     document.getElementById('userArea').style.display='none';
     closeAllDropdowns();
@@ -3049,7 +3049,7 @@ function addToList(title) {
         watchlist.push(title);
         toast('success','Added',`${title} saved to your list`);
     }
-    localStorage.setItem('cs_list',JSON.stringify(watchlist));
+    localStorage.setItem('of_list',JSON.stringify(watchlist));
 }
 
 // ==============================================
